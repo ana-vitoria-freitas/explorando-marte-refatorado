@@ -28,6 +28,13 @@ public class Main {
 			int posicaoAlturaSonda = s.nextInt();
 			char direcaoSonda = s.nextLine().charAt(1);
 			
+			Posicao posicaoSonda = new Posicao(posicaoLarguraSonda, posicaoAlturaSonda, new Direcao(direcaoSonda));
+			if(!posicaoSonda.estaNaAreaDelimitada(terreno)) {
+				MensagemErro.sondaForaTerreno();
+				s.close();
+				return;
+			}
+			
 			System.out.println("Digite a sequência de comandos que a nave deverá realizar: ");
 			String sequenciaMovimentosSonda = s.nextLine();
 			
@@ -38,11 +45,32 @@ public class Main {
 			
 		}while(s.hasNextLine());
 		
-		for(int i = 0; i < sondas.size(); i++) {
-			Posicao posicaoFinal = sequenciasMovimentos.get(i).movimentaSonda(sondas.get(i));
-			posicaoFinal.estaNaAreaDelimitada(terreno);
+		if(sondas.size() == 1) {
+			Posicao posicaoFinal = sequenciasMovimentos.get(0).movimentaSonda(sondas.get(0));
+			if(!posicaoFinal.estaNaAreaDelimitada(terreno)) {
+				MensagemErro.sondaForaTerreno();
+				s.close();
+				return;
+			}
 			System.out.println(posicaoFinal.getPosicaoLargura() + " " + posicaoFinal.getPosicaoAltura() + " " + Character.toUpperCase(posicaoFinal.getDirecao().retornaDirecaoValida()));
+
+		}else {			
+			for(int i = 0; i < sondas.size() - 1; i++) {
+				Posicao posicaoFinal1 = sequenciasMovimentos.get(i).movimentaSonda(sondas.get(i));
+				Posicao posicaoFinal2 = sequenciasMovimentos.get(i + 1).movimentaSonda(sondas.get(i + 1));
+				
+				if(posicaoFinal1.chocouComOutraSonda(posicaoFinal2)) {
+					MensagemErro.sondaChocouComOutra();
+					s.close();
+					return;
+				}
+				System.out.println(posicaoFinal1.getPosicaoLargura() + " " + posicaoFinal1.getPosicaoAltura() + " " + Character.toUpperCase(posicaoFinal1.getDirecao().retornaDirecaoValida()));
+				System.out.println(posicaoFinal2.getPosicaoLargura() + " " + posicaoFinal2.getPosicaoAltura() + " " + Character.toUpperCase(posicaoFinal2.getDirecao().retornaDirecaoValida()));
+
+
+			}
 		}
+		
 		
 		s.close();
 	}
