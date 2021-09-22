@@ -12,7 +12,13 @@ O código acima é uma versão simples do que foi pedido [nesse desafio](https:/
   * Métodos getters e setters compõe essa classe;
   * Métodos ```estaNaAreaDelimitada, possuiPosicaoNegativa, chocouComOutraSonda``` servem para verificar se a sonda ultrapassou a área delimitada, se na movimentação alcançou uma posição negativa e se outra sonda está na mesma posição que a sonda atual, respectivamente.
 - Terreno
-  * 
+  * Atributos ```altura e largura``` que representam as dimensões do terreno;
+  * Métodos getters de altura, largura e área foram implementados;
+  * Método de verificação se as dimensões do terreno são válidas.
 - Movimento
+  * Atributo ```sequenciaMovimentos``` representa a String que contém a sequencia de passos que a sonda deverá executar;
+  * Método ```retornaRotacaoMovimento``` é a base para a lógica implementada de movimentação da sonda;
+  * Método ```moveNaDirecao``` serve para movimentar a sonda em uma unidade seja na largura ou altura, de acordo com a orientação (N,E,S,W);
+  * Método ```movimentaSonda``` itera sobre a string que contém a sequência de movimentos e rotaciona ou movimenta a sonda em uma unidade, dependendo se o comando for ```L - rotaciona para a esquerda```, ```R - rotaciona para a direita``` ou ```M - movimenta em uma unidade segundo sua orientação```.
 - MensagemErro
 - Main
