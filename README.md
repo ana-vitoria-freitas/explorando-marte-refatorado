@@ -21,4 +21,6 @@ O código acima é uma versão simples do que foi pedido [nesse desafio](https:/
   * Método ```moveNaDirecao``` serve para movimentar a sonda em uma unidade seja na largura ou altura, de acordo com a orientação (N,E,S,W);
   * Método ```movimentaSonda``` itera sobre a string que contém a sequência de movimentos e rotaciona ou movimenta a sonda em uma unidade, dependendo se o comando for ```L - rotaciona para a esquerda```, ```R - rotaciona para a direita``` ou ```M - movimenta em uma unidade segundo sua orientação```.
 - MensagemErro
+  * Métodos ```sondaForaTerreno, sondaChocouComOutra, terrenoDimensoesInvalidas``` exibem na tela mensagens que indicam o que aconteceu durante a execução do código
 - Main
+  * Executa o programa em si, o interrompendo caso ocorra alguma situação inesperada (essas são abordadas na classe MensagemErro) e imprime a posição de cada sonda segundo a sequencia de movimentos passada pelo usuário.
