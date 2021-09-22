@@ -24,3 +24,8 @@ O código acima é uma versão simples do que foi pedido [nesse desafio](https:/
   * Métodos ```sondaForaTerreno, sondaChocouComOutra, terrenoDimensoesInvalidas``` exibem na tela mensagens que indicam o que aconteceu durante a execução do código
 - **Main**
   * Executa o programa em si, o interrompendo caso ocorra alguma situação inesperada (essas são abordadas na classe MensagemErro) e imprime a posição de cada sonda segundo a sequencia de movimentos passada pelo usuário.
+
+## Observações
+
+- O código feito está da forma mais simples arquitetada;
+- Há pontos de falhas (e.g. se a sonda ultrapassar o terreno enquanto ela movimenta e ao final acabar retornando ao perímetro não afetará na execução do código)
