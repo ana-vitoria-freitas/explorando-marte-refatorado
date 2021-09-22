@@ -50,8 +50,8 @@ public class Posicao {
 		return false;
 	}
 	
-	public boolean chocouComOutraNave(Posicao outraNave) {
-		if(posicaoAltura == outraNave.getPosicaoAltura() && posicaoLargura == outraNave.getPosicaoLargura()) {
+	public boolean chocouComOutraSonda(Posicao outraSonda) {
+		if(posicaoAltura == outraSonda.getPosicaoAltura() && posicaoLargura == outraSonda.getPosicaoLargura()) {
 			return true;
 		}
 		

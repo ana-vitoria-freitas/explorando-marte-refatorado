@@ -16,6 +16,12 @@ public class Main {
 		
 		Terreno terreno = new Terreno(alturaTerreno, larguraTerreno);
 		
+		if(terreno.dimensoesInvalidas()) {
+			MensagemErro.terrenoDimensoesInvalidas();
+			s.close();
+			return;
+		}
+		
 		do {
 			System.out.println("Digite a posição inicial da sonda e a sua direção (N, E, S, W)");
 			int posicaoLarguraSonda = s.nextInt();
