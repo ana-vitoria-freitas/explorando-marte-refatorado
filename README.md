@@ -28,5 +28,5 @@ O código acima é uma versão simples do que foi pedido [nesse desafio](https:/
 ## Observações
 
 - O código feito está da forma mais simples arquitetada;
-- Há pontos de falhas (e.g. se a sonda ultrapassar o terreno enquanto ela movimenta e ao final acabar retornando ao perímetro não afetará na execução do código)
+- Há pontos de falhas (e.g. se a sonda ultrapassar o terreno enquanto ela movimenta e ao final acabar retornando ao perímetro não afetará na execução do código);
 - As verificações de caso de borda não são completamente cobertos.
