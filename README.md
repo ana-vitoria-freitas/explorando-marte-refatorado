@@ -5,7 +5,8 @@ O código acima é uma versão simples do que foi pedido [nesse desafio](https:/
 ## Classes
 
 - Direção
-  * Contém apenas o atributo 
+  * Contém apenas o atributo ```direcao``` que representaria a orientação ```N,E,S,W```;
+  * O método ```retornaDirecaoValida``` trata se o input do usuário é válido dentro das quatros orientações possíveis.
 - Posição
 - Terreno
 - Movimento
