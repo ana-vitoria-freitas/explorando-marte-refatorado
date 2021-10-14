@@ -69,7 +69,9 @@ public class Posicao {
 	}
 	
 	public boolean existeColisao(ArrayList<Posicao> posicoesSondas) {
-		for(int i = posicaoArraySondas - 1; i >= 0; i--) {
+		if(posicoesSondas.size() == 1) return false;
+		
+		for(int i = posicaoArraySondas; i >= 0; i--) {
 			if(this.chocouComOutraSonda(posicoesSondas.get(i))) {
 				return true;
 			}
