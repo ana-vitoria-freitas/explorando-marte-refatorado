@@ -30,7 +30,7 @@ public class Main {
 			char direcaoSonda = s.nextLine().charAt(1);
 			
 			Posicao posicaoSonda = new Posicao(posicaoLarguraSonda, posicaoAlturaSonda, new Direcao(direcaoSonda), quantidadeSondas);
-			if(!posicaoSonda.estaNaAreaDelimitada(terreno)) {
+			if(!posicaoSonda.estaNaAreaDelimitada(terreno) || posicaoSonda.possuiPosicaoNegativa()) {
 				MensagemErro.sondaForaTerreno();
 				s.close();
 				return;
@@ -52,6 +52,14 @@ public class Main {
 			
 			if(posicaoFinal1.existeColisao(sondas)) {
 				MensagemErro.sondaChocouComOutra();
+				s.close();
+				return;
+			}
+			
+			if(!posicaoFinal1.estaNaAreaDelimitada(terreno) || posicaoFinal1.possuiPosicaoNegativa()) {
+				MensagemErro.sondaForaTerreno();
+				s.close();
+				return;
 			}
 			
 				
